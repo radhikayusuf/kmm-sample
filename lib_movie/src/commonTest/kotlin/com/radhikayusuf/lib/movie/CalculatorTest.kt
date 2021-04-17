@@ -1,6 +1,6 @@
 package com.radhikayusuf.lib.movie
 
-import com.radhikayusuf.lib.movie.Calculator
+import com.radhikayusuf.lib.movie.utils.Calculator
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

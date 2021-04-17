@@ -1,4 +1,4 @@
-package com.radhikayusuf.lib.movie
+package com.radhikayusuf.lib.movie.utils
 
 import com.radhikayusuf.lib.movie.data.model.Movie
 
