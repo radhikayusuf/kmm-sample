@@ -1,5 +1,6 @@
 package com.radhikayusuf.lib.movie
 
+import com.radhikayusuf.lib.movie.utils.Greeting
 import org.junit.Assert.assertTrue
 import org.junit.Test
 

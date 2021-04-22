@@ -1,6 +1,7 @@
 package com.radhikayusuf.lib.movie.data.services
 
-import com.radhikayusuf.lib.movie.data.model.Movie
+import com.radhikayusuf.lib.movie.data.model.BaseResponse
+import com.radhikayusuf.lib.movie.data.model.MovieResponseModel
 import io.ktor.client.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
@@ -13,7 +14,7 @@ import io.ktor.client.request.*
 class MovieService {
     companion object {
         private const val URL =
-            "https://jobs.github.com/positions"
+            "https://api.themoviedb.org/3/"
     }
 
     private val httpApiClient: HttpClient = HttpClient {
@@ -23,11 +24,11 @@ class MovieService {
         }
     }
 
-    suspend fun getJobInfo(): List<Movie> {
-        return httpApiClient.get("$URL.json?full_time=true&location=uk")
-    }
-
-    suspend fun getJobDetail(jobId: String): Movie {
-        return httpApiClient.get("$URL/$jobId.json")
+    suspend fun getMovies(): BaseResponse<List<MovieResponseModel>> {
+        return try {
+            httpApiClient.get("${URL}movie/popular?api_key=xxx")
+        } catch (e: Exception) {
+            return BaseResponse(emptyList(), -1, e.message.orEmpty())
+        }
     }
 }
