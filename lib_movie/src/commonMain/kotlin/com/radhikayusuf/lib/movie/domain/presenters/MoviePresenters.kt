@@ -11,4 +11,6 @@ interface MoviePresenters {
     fun showMovies(list: List<MovieEntity>)
 
     fun showEmptyResult()
+
+    fun showMessage(message: String)
 }

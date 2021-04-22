@@ -25,6 +25,10 @@ class MovieService {
     }
 
     suspend fun getMovies(): BaseResponse<List<MovieResponseModel>> {
-        return httpApiClient.get("${URL}movie/popular?api_key=xxx")
+        return try {
+            httpApiClient.get("${URL}movie/popular?api_key=xxx")
+        } catch (e: Exception) {
+            return BaseResponse(emptyList(), -1, e.message.orEmpty())
+        }
     }
 }

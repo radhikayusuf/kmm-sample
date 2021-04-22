@@ -61,6 +61,7 @@ kotlin {
         val iosMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.0.0")
             }
         }
         val iosTest by getting
