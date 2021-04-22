@@ -25,6 +25,6 @@ class MovieService {
     }
 
     suspend fun getMovies(): BaseResponse<List<MovieResponseModel>> {
-        return httpApiClient.get("${URL}movie/popular?api_key=983e2812b719e865d53ccf59c73d7624")
+        return httpApiClient.get("${URL}movie/popular?api_key=xxx")
     }
 }
