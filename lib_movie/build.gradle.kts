@@ -1,9 +1,9 @@
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
-    kotlin("multiplatform")
     id("com.android.library")
     id("kotlin-android-extensions")
+    kotlin("multiplatform")
     kotlin("plugin.serialization") version "1.4.31"
 }
 group = "com.radhikayusuf.lib.movie"
